@@ -7,9 +7,11 @@
 #include "btnInterrupt.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "Leds/LedFunctions.h"
 
 #define LED_PIN PORTB5
 
+uint8_t state = 0;
 
 void initBtns(){
 	
@@ -34,6 +36,23 @@ void initBtns(){
 /* The interrupt                                                        */
 /************************************************************************/
 ISR(INT0_vect){
-	PORTB ^= (1 << LED_PIN);
-
+	switch (state)
+	{
+	case 0:
+		led_blue();
+		state++;
+		break;
+	case 1:
+		led_green();
+		state++;
+		break;
+	case 2:
+		led_red();
+		state = 0;
+		break;
+	default:
+		state = 0;
+		break;
+	}
+	_delay_ms(10);
 }

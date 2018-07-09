@@ -9,12 +9,6 @@
 #ifndef BTNINTERRUPT_H_
 #define BTNINTERRUPT_H_
 
-enum{
-	LED_ON,
-	LED_OFF,
-	RAINBOW
-	}btnState;
-
 void initBtns();
 
 

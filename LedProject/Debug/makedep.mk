@@ -12,6 +12,8 @@ src\Leds\LedFunctions.c
 
 src\Leds\light_ws2812.c
 
+src\uart\uart_communication.c
+
 src\ASF\common\boards\user_board\init.c
 
 src\main.c

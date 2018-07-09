@@ -4,6 +4,9 @@
  * Created: 2018-07-01 21:40:37
  *  Author: User
  */ 
+#include <util/delay.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
 #include "LedFunctions.h"
 #include "light_ws2812.h"
 
@@ -31,16 +34,18 @@ void initLeds(){
 	    colors[6].r=000; colors[6].g=000; colors[6].b=255;//blue
 	    colors[7].r=100; colors[7].g=000; colors[7].b=255;//violet
 		
+		ledsOn();
 		
 }
 
-void ledsOn(cRGB color){
+void ledsOn(){
 	for (int i = MAX_LEDS; i > 0; i--)
 	{
-		leds[i-1].r = color.r;
-		leds[i-1].g = color.g;
-		leds[i-1].b = color.b;
+		leds[i-1].r = 120;
+		leds[i-1].g = 120;
+		leds[i-1].b = 120;
 	}
+	ws2812_setleds(leds,MAX_LEDS);
 }
 
 /************************************************************************/
@@ -53,5 +58,35 @@ void ledsOff(){
 		leds[i-1].g = 0;
 		leds[i-1].b = 0;
 	}
+	ws2812_setleds(leds,MAX_LEDS);
 }
 
+void led_green(){
+	for (int i = MAX_LEDS; i > 0; i--)
+	{
+		leds[i-1].r = 0;
+		leds[i-1].g = 255;
+		leds[i-1].b = 0;
+	}
+	ws2812_setleds(leds,MAX_LEDS);
+}
+
+void led_blue(){
+	for (int i = MAX_LEDS; i > 0; i--)
+	{
+		leds[i-1].r = 0;
+		leds[i-1].g = 0;
+		leds[i-1].b = 255;
+	}
+	ws2812_setleds(leds,MAX_LEDS);
+}
+
+void led_red(){
+	for (int i = MAX_LEDS; i > 0; i--)
+	{
+		leds[i-1].r = 255;
+		leds[i-1].g = 0;
+		leds[i-1].b = 0;
+	}
+	ws2812_setleds(leds,MAX_LEDS);
+}

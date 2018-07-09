@@ -23,18 +23,18 @@
 #include <asf.h>
 #include <util/delay.h>
 #include "Leds/LedFunctions.h"
+#include "Input/btnInterrupt.h"
+#include "uart/uart_communication.h"
 
 int main (void)
 {
 	sysclk_init();
 	board_init();
-	//initBtns();
-	
-	DDRB |= (1 << PORTB5);
+	initLeds();
+	initBtns();
 	
 	while (1)
 	{
-		_delay_ms(1000);
-		PORTB ^= (1 << PORTB5);
+		
 	}
 }

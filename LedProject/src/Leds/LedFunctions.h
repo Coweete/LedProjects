@@ -13,7 +13,9 @@
 void initLeds();
 void ledsOn();
 void ledsOff();
-
+void led_green();
+void led_blue();
+void led_red();
 
 
 #endif /* LEDFUNCTIONS_H_ */

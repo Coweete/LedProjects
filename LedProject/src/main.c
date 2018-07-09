@@ -21,15 +21,20 @@
  *
  */
 #include <asf.h>
+#include <util/delay.h>
 #include "Leds/LedFunctions.h"
 
 int main (void)
 {
 	sysclk_init();
 	board_init();
+	//initBtns();
+	
+	DDRB |= (1 << PORTB5);
 	
 	while (1)
 	{
-		
+		_delay_ms(1000);
+		PORTB ^= (1 << PORTB5);
 	}
 }

@@ -2,7 +2,11 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+src\adc\adc_functions.c
+
 src\ASF\common\services\clock\mega\sysclk.c
+
+src\Input\btnInterrupt.c
 
 src\Leds\LedFunctions.c
 

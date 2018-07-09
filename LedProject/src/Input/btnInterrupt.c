@@ -8,11 +8,17 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+#define LED_PIN PORTB5
+
+
 void initBtns(){
 	
 	//Clear the PD2 Pin
 	DDRD &= ~(1 << DDD2);
 	//PD2 is now an input
+	
+	//LED PIN as output
+	DDRB |= (1 << LED_PIN);
 	
 	//Turn on the Pull-up
 	PORTD |= (1<<PORTD2);
@@ -28,5 +34,6 @@ void initBtns(){
 /* The interrupt                                                        */
 /************************************************************************/
 ISR(INT0_vect){
-	
+	PORTB ^= (1 << LED_PIN);
+
 }

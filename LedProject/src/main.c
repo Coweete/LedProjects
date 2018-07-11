@@ -25,16 +25,20 @@
 #include "Leds/LedFunctions.h"
 #include "Input/btnInterrupt.h"
 #include "uart/uart_communication.h"
+#include "adc/adc_functions.h"
+
+char String[]="Hello world!!\n";
 
 int main (void)
 {
-	sysclk_init();
-	board_init();
-	initLeds();
-	initBtns();
+	//sysclk_init();
+	//board_init();
+	//initLeds();
+	//initBtns();
+	USART_init();
+	adc_init();
 	
 	while (1)
 	{
-		
 	}
 }

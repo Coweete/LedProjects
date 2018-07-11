@@ -31,7 +31,7 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../src/Leds/LedFunctions.h ../src/Input/btnInterrupt.h \
- ../src/uart/uart_communication.h
+ ../src/uart/uart_communication.h ../src/adc/adc_functions.h
 
 ../src/asf.h:
 
@@ -108,3 +108,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../src/Input/btnInterrupt.h:
 
 ../src/uart/uart_communication.h:
+
+../src/adc/adc_functions.h:

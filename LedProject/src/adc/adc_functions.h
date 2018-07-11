@@ -9,6 +9,7 @@
 #ifndef ADC_FUNCTIONS_H_
 #define ADC_FUNCTIONS_H_
 
+void adc_init(void);
 
 
 

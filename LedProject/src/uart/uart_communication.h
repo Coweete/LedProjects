@@ -9,10 +9,9 @@
 #ifndef UART_COMMUNICATION_H_
 #define UART_COMMUNICATION_H_
 
-void init_usart();
-void USART_send(unsigned char data);
+void USART_init(void);
 unsigned char USART_receive(void);
-void USART_putString(char* StringPtr);
-void test_send();
+void USART_send( unsigned char data);
+void USART_putstring(char* StringPtr);
 
 #endif /* UART_COMMUNICATION_H_ */

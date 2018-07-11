@@ -7,11 +7,14 @@
 #include "btnInterrupt.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include "Leds/LedFunctions.h"
+#include "uart/uart_communication.h"
 
 #define LED_PIN PORTB5
 
 uint8_t state = 0;
+char Res[]="Interrupt";
 
 void initBtns(){
 	
